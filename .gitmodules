@@ -1,0 +1,3 @@
+[submodule "plugins/timewarrior"]
+	path = plugins/timewarrior
+	url = https://github.com/svenXY/timewarrior
