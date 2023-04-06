@@ -63,6 +63,7 @@ pyclean() {
     find $* -name '*~' -delete
     find $* -name '__pycache__' -print0 | xargs -0 rm -rf
     find $* -name '*.egg-info' -print0 | xargs -0 rm -rf
+    find $* -name '.mypy_cache' -print0 | xargs -0 rm -rf
 }
 
 alias ipy='jupyter qtconsole --style monokai --ConsoleWidget.font_family="DejaVu Sans Mono" --ConsoleWidget.font_size=12'
