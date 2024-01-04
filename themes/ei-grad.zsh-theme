@@ -20,8 +20,15 @@ ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[green]%}git:"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
 local git='$(git_prompt_info)'
 
-PROMPT="%B[%b ${user_host}${current_dir} ${venv}${rvm_ruby}${git}%B]%b
+local return_code="%(?..%{$terminfo[bold]$fg[red]%}Command exit code: %?%{$reset_color%}
+)"
+local timestamp="%D{%FT%T}
+"
+
+local foot_jump=$(print -Pn "\e]133;A\e\\")
+PROMPT="${return_code}${foot_jump}%B[%b ${user_host}${current_dir} ${venv}${rvm_ruby}${git}%B]%b
 %B→%b "
 
-local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
-RPS1="${return_code}"
+#RPS1="${return_code}"
+
+REPORTTIME=1
