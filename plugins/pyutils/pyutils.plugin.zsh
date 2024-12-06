@@ -54,10 +54,6 @@ pyfind() {
     find $* -name "*.py"
 }
 
-dus() {
-    find $* -maxdepth 1 -mindepth 1 -print0 | xargs -0 du -s | sort -n
-}
-
 pyclean() {
     find $* -name '*.pyc' -delete
     find $* -name '*~' -delete
